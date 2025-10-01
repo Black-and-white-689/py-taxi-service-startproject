@@ -2,7 +2,7 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractUser
 
-from taxi_service import settings
+from django.conf import settings
 
 
 class Manufacturer(models.Model):
@@ -49,8 +49,8 @@ class Car(models.Model):
         related_name="cars"
     )
     drivers = models.ManyToManyField(
-        settings.AUTH_USER_MODEL
-    )
+        settings.AUTH_USER_MODEL,
+        related_name="cars")
 
     class Meta:
         ordering = ("model", )

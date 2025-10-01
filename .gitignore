@@ -1,4 +1,4 @@
-# --- Python ---
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -54,6 +54,8 @@ docker-compose.override.yml
 # --- Django специфичное ---
 # База данных SQLite
 *.sqlite3
+*.sqlite
+*.db3
 
 # Секреты и ключи
 *.env
