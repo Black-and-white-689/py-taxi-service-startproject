@@ -15,9 +15,7 @@ class Manufacturer(models.Model):
     )
 
     def __str__(self):
-        return (f""
-                f"{self.name} "
-                f"({self.country})")
+        return f"{self.name} {self.country}"
 
     class Meta:
         ordering = ("name", )
@@ -33,10 +31,7 @@ class Driver(AbstractUser):
         ordering = ("username", )
 
     def __str__(self):
-        return (f""
-                f"{self.username}: "
-                f"{self.first_name} "
-                f"{self.last_name}")
+        return f"{self.username}: {self.first_name} {self.last_name}"
 
 
 class Car(models.Model):
@@ -56,6 +51,4 @@ class Car(models.Model):
         ordering = ("model", )
 
     def __str__(self):
-        return (f""
-                f"{self.model} "
-                f"({self.manufacturer.name})")
+        return f"{self.model} ({self.manufacturer.name})"
